@@ -86,7 +86,7 @@ const AllRepositories = () => {
               </div>
               ) : (
               <div className="flex flex-col items-center">
-                  <div className="text-container mt-28 sm:mt-24">
+                  <div className="text-container mt-28 sm:mt-24 md:mt-36">
                       <h2 className="text-lg xs:text-xl font-bold font-sora text-white ">Ddreyy Github Repositories</h2>
                       <div className="text-border"></div>
                   </div>
