@@ -47,10 +47,10 @@ const RepoData = () => {
     <div className="flex flex-col justify-center items-center h-screen text-white bg-black">
       <h2 className="font-sora text-xl sm:text-3xl">{repository.name}</h2>
         <p className="text-base sm:text-lg font-satoshi flex text-center">{repository.description}</p>
-      <a href={repository.html_url} target="_blank" rel="noopener noreferrer" className="bg-[#E1D9D1] hover:bg-[#676767] hover:text-white text-black transition-transform duration-400 ease-in-out transform hover:scale-105 flex items-center gap-2 font-satoshi py-2 px-4 rounded mt-4">
-        View on GitHub <BsBoxArrowUpRight className="text-sm font-extrabold" />
-      </a>
-      <Link to="/repositories">
+        <a href={repository.html_url} target="_blank" rel="noopener noreferrer" className="bg-[#E1D9D1] hover:bg-[#676767] hover:text-white text-black transition-transform duration-400 ease-in-out transform hover:scale-105 flex items-center gap-2 font-satoshi py-2 px-4 rounded mt-4">
+          View on GitHub <BsBoxArrowUpRight className="text-sm font-extrabold" />
+        </a>
+      <Link to="/">
         <button className="bg-[#E1D9D1] hover:bg-[#676767] hover:text-white text-black transition-transform duration-400 ease-in-out transform hover:scale-105 font-bold font-sora py-2 px-4 mt-16 rounded">
           Back to Repo List
         </button>

@@ -1,23 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RepoData from './components/RepoData';
-import RepoList from './components/RepoLists';
-import ErrorBoundary from './components/ErrorBoundary';
+import { ErrorBoundary, ErrorContext} from './components/ErrorBoundary';
 import NotFoundPage from './components/NotFoundPage';
+import AllRepositories from './components/AllRepositories';
+import TestPage from './components/TestPage';
+import Navbar from './components/Navbar';
 
 function App() {
 
+
   return (
     <Router>
-      <ErrorBoundary>
-        <Routes>
-          <Route path="/"  element={<RepoList />} />
-          <Route path="/repositories" element={<RepoList />} />
-          <Route path="/repositories/:repoName" element={<RepoData />} />
-          <Route element={<NotFoundPage />} />
-        </Routes>
-      </ErrorBoundary>  
+       <ErrorBoundary>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<AllRepositories />} />
+            <Route path="/test" element={<ErrorBoundary><TestPage /></ErrorBoundary>} />
+            <Route path="/repositories/:repoName" element={<RepoData />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </ErrorBoundary>
     </Router>
+
   );
 };
 
