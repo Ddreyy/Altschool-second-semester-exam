@@ -77,24 +77,25 @@ const AllRepositories = () => {
         });
   
       return (
-          <div className="bg-black flex h-screen justify-center items-center ">
+        <section className="h-screen flex flex-col bg-black ">
+            <div className="flex justify-center items-center" style={{ overflowX: 'hidden' }}>
               {isLoading ? (
               <div className='flex flex-col justify-center items-center h-screen'>
                   <h1 className='font-sora text-lg sm:text-2xl md:text-3xl font-bold text-white'>{text}</h1>
                   <Lottie animationData={animationData} className='w-full h-auto'/>
               </div>
               ) : (
-              <div className="flex flex-col items-center ">
-                  <div className="text-container">
-                      <h2 className="text-lg xs:text-xl font-bold font-sora text-white">Ddreyy Github Repositories</h2>
+              <div className="flex flex-col items-center">
+                  <div className="text-container mt-28 sm:mt-24">
+                      <h2 className="text-lg xs:text-xl font-bold font-sora text-white ">Ddreyy Github Repositories</h2>
                       <div className="text-border"></div>
                   </div>
                   
-                  <ul className="list-none pt-4">
+                  <ul className="list-none pt-6">
                   {currentRepos.map((repo, index) => (
                       <li
                       key={repo.id}
-                      className={`mb-2 border bg-[#212F3E] rounded py-2 sm:py-3 md:py-4 px-10 sm:px-14 ${
+                      className={`mb-2 border bg-[#212F3E] rounded py-4 sm:py-3 md:py-5 px-10 sm:px-14 ${
                           index % 2 === 0 ? "slide-from-right" : "slide-from-left"
                       }`}
                       style={{ transitionDelay: `${index * 0.1}s` }}
@@ -119,7 +120,7 @@ const AllRepositories = () => {
                       </li>
                   ))}
                   </ul>
-                  <div className="mt-4 flex space-x-4">
+                  <div className="pt-4 flex space-x-4">
                       <button
                       className={`bg-[#E1D9D1] hover:bg-[#676767] hover:text-white transition-transform duration-400 ease-in-out transform hover:scale-105 text-black font-bold font-sora py-1 xs:py-2 px-4 rounded-l ${
                           currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
@@ -149,7 +150,9 @@ const AllRepositories = () => {
                   </div>
               </div>
               )}
-          </div>
+            </div>
+        </section>
+          
         );
 };
 

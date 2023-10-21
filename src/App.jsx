@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
        <ErrorBoundary>
-        <div>
           <Navbar />
           <Routes>
             <Route path="/" element={<AllRepositories />} />
@@ -21,7 +20,6 @@ function App() {
             <Route path="/repositories/:repoName" element={<RepoData />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-        </div>
       </ErrorBoundary>
     </Router>
 
