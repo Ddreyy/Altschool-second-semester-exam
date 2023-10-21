@@ -95,7 +95,7 @@ const AllRepositories = () => {
                   {currentRepos.map((repo, index) => (
                       <li
                       key={repo.id}
-                      className={`mb-2 border bg-[#212F3E] rounded py-4 sm:py-3 md:py-5 px-10 sm:px-14 ${
+                      className={`mb-2 border bg-[#212F3E] rounded py-2 sm:py-3 md:py-4 px-10 sm:px-14 ${
                           index % 2 === 0 ? "slide-from-right" : "slide-from-left"
                       }`}
                       style={{ transitionDelay: `${index * 0.1}s` }}
